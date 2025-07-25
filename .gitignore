@@ -1,0 +1,12 @@
+# Ignore everything in log/ folder
+log/
+
+# IDE settings
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Optional: General logs
+*.log

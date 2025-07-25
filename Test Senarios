@@ -1,0 +1,7 @@
+| Test Case               | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| **TC1 - Valid Login**   | Login with correct username and password                      |
+| **TC2 - Invalid Login** | Try login with wrong credentials                              |
+| **TC3 - Empty Fields**  | Try login without filling username or password                |
+| **TC4 - Logout**        | Login then logout and verify                                  |
+| **TC5 - UI Elements**   | Check if username/password input and login button are visible |
