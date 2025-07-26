@@ -2,20 +2,27 @@
 Library     SeleniumLibrary
 Documentation       Try login with empty username or password fields and verify error
 Resource    ../resources/keywords.robot
-
+Suite Setup     Open Browser To Login Page
+Suite Teardown      Close All Browsers
+Test Setup          ReloadCurrentPage
 *** Test Cases ***
-TC3 Empty Fields
+TC3BothEmpty
     # Case 1: Both fields empty
     EnterDetails    ${EMPTY}    ${EMPTY}
-    Wait Until Element Is Visible    xpath=//p[contains(text(),'Required')]    5s
-    Page Should Contain Element    xpath=//p[contains(text(),'Required')]
+    SubmitLogin
+    Wait Until Page Contains    Required    5s
+    Page Should Contain    Required
 
-    # Case 2: Username empty, password filled
-    EnterDetails    ${EMPTY}    admin123
-    Wait Until Element Is Visible    xpath=//p[contains(text(),'Required')]    5s
-    Page Should Contain Element    xpath=//p[contains(text(),'Required')]
-
-    # Case 3: Password empty, username filled
+TC3PasswordEmpty
+    # Case 2: Username filled, Password empty
     EnterDetails    Admin    ${EMPTY}
-    Wait Until Element Is Visible    xpath=//p[contains(text(),'Required')]    5s
-    Page Should Contain Element    xpath=//p[contains(text(),'Required')]
+    SubmitLogin
+    Wait Until Page Contains    Required    5s
+    Page Should Contain    Required
+
+TC3UserEmpty
+    # Case 3: Username empty, Password filled
+    EnterDetails    ${EMPTY}    admin123
+    SubmitLogin
+    Wait Until Page Contains    Required    5s
+    Page Should Contain    Required

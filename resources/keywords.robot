@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    XML
 Variables       ../locators/Locators.py
 
 *** Variables ***
@@ -20,3 +21,10 @@ EnterDetails
     
 SubmitLogin
     Click Element    ${btn_login}
+
+ClearElements
+    Execute JavaScript    document.querySelector('[name="username"]').value = "";
+    Execute JavaScript    document.querySelector('[name="password"]').value = "";
+    
+ReloadCurrentPage
+    Go To    ${url}
