@@ -50,3 +50,13 @@ SubmitReset
 
 VerifyResetPassword
     Page Should Contain    ${forgotPasswordMessage}
+
+Verify Mobile Screen
+    Set Window Size    375    667   # iphone screen
+    Page Should Contain Element    ${input_username_login}
+    Page Should Contain Element    ${btn_login}
+
+Verify Tablet Screen
+    Set Window Size    768    1024    # iPad size
+    Page Should Contain Element    ${input_username_login}
+    Page Should Contain Element    ${btn_login}
