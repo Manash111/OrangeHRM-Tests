@@ -60,3 +60,13 @@ Verify Tablet Screen
     Set Window Size    768    1024    # iPad size
     Page Should Contain Element    ${input_username_login}
     Page Should Contain Element    ${btn_login}
+
+
+Login with SQLi
+    [Arguments]     ${sqlInjection}
+    Input Text    ${input_username_login}    ${sqlInjection}
+    Input Text    ${input_passowrd_login}    anything
+    SubmitLogin
+    Page Should Contain    Invalid credentials
+    # Should NOT contain: "SQL error", "syntax error", etc.
+
