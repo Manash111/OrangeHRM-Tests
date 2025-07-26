@@ -38,3 +38,15 @@ LogOut
 VerifyLogoutMessage
     Wait Until Page Contains Element    ${element_loginForm}    10s
     Page Should Contain    Login
+
+ForgotPassword
+    [Arguments]     ${username}
+    Click Element    ${link_forgotPassword}
+    Wait Until Page Contains    Reset Password
+    Input Text    ${input_username_forgotPassword}    ${username}
+
+SubmitReset
+    Click Element    ${btn_reset}
+
+VerifyResetPassword
+    Page Should Contain    ${forgotPasswordMessage}
