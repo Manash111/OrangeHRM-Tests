@@ -9,3 +9,9 @@ dropdown_logout = "xpath://li[contains(@class, 'oxd-userdropdown')]"
 btn_logout = "xpath://a[text()='Logout']"
 
 element_loginForm = "xpath://div[@class='orangehrm-login-form']"
+
+link_forgotPassword = "xpath://p[text()='Forgot your password? ']"
+input_username_forgotPassword = input_username_login
+
+btn_reset = "xpath://button[normalize-space()='Reset Password']"
+forgotPasswordMessage = "Reset Password link sent successfully"
