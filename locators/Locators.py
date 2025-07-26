@@ -1,0 +1,11 @@
+### login details
+
+input_username_login = "xpath://input[@placeholder='Username']"
+input_passowrd_login = "xpath://input[@placeholder='Password']"
+
+btn_login = "xpath://button[normalize-space()='Login']"
+
+dropdown_logout = "xpath://li[contains(@class, 'oxd-userdropdown')]"
+btn_logout = "xpath://a[text()='Logout']"
+
+element_loginForm = "xpath://div[@class='orangehrm-login-form']"
