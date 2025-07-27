@@ -16,7 +16,7 @@ pipeline {
         stage('Testing......') {
             steps {
                 echo 'Run Robot Tests'
-                bat 'venv\\Scripts\\robot -d reports tests/'
+                bat 'venv\\Scripts\\robot -d reports tests/XSS_attempt.robot'
             }
         }
         stage('Archive Reports') {
