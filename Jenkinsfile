@@ -16,7 +16,7 @@ pipeline {
         stage('Testing......') {
             steps {
                 echo 'Run Robot Tests'
-                bat 'venv\\Scripts\\robot -d reports tests/XSS_attempt.robot'
+                bat 'venv\\Scripts\\robot -d reports tests/LongInputs.robot'
             }
         }
         stage('Archive Reports') {
@@ -25,25 +25,25 @@ pipeline {
             }
         }
     }
-    post {
-
-        always {
-            emailext (
-                to: "manashmaharjan5@gmail.com",
-                subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
-                body: "Build URL: ${env.BUILD_URL}",
-                attachmentsPattern: "reports/*.html"
-            )
-        }
-        success {
-            emailext subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "Good news! The Jenkins build succeeded.\n\nCheck console: ${env.BUILD_URL}",
-                     to: 'manashmaharjan5@gmail.com'
-        }
-        failure {
-            emailext subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: "Oops! The Jenkins build failed.\n\nCheck details: ${env.BUILD_URL}",
-                     to: 'manashmaharjan5@gmail.com'
-        }
-    }
+//     post {
+//
+//         always {
+//             emailext (
+//                 to: "manashmaharjan5@gmail.com",
+//                 subject: "Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
+//                 body: "Build URL: ${env.BUILD_URL}",
+//                 attachmentsPattern: "reports/*.html"
+//             )
+//         }
+//         success {
+//             emailext subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+//                      body: "Good news! The Jenkins build succeeded.\n\nCheck console: ${env.BUILD_URL}",
+//                      to: 'manashmaharjan5@gmail.com'
+//         }
+//         failure {
+//             emailext subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+//                      body: "Oops! The Jenkins build failed.\n\nCheck details: ${env.BUILD_URL}",
+//                      to: 'manashmaharjan5@gmail.com'
+//         }
+//     }
 }
