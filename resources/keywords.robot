@@ -70,3 +70,25 @@ Login with SQLi
     Page Should Contain    Invalid credentials
     # Should NOT contain: "SQL error", "syntax error", etc.
 
+
+VerifyOneXSS
+     # Verify NO alert pops up (use JavaScript check)
+    ${alert_present}=    Run Keyword And Return Status    Alert Should Be Present
+    Run Keyword If    ${alert_present}    Fail    "XSS Vulnerability: Script executed!"
+
+    # Verify sanitized response (either error or sanitized display)
+    Page Should Not Contain    <script>alert()</script>  # Script should NOT render
+    Page Should Contain    Invalid credentials
+
+XSS Multiple Input
+    [Arguments]     ${xss_payload}
+    EnterDetails    ${xss_payload}    dummy
+    SubmitLogin
+
+    ${alert_present}=    Run Keyword And Return Status    Alert Should Be Present
+    Run Keyword If    ${alert_present}    Fail    "XSS Vulnerability: Script executed!"
+
+    # Verify sanitized response (either error or sanitized display)
+    Page Should Not Contain    ${xss_payload}     # Script should NOT render
+    Page Should Contain    Invalid credentials
+
