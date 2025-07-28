@@ -1,7 +1,7 @@
 ### login details
 
-input_username_login = "xpath://input[@placeholder='username']"
-input_passowrd_login = "xpath://input[@placeholder='password']"
+input_username_login = "xpath://input[@placeholder='Username']"
+input_passowrd_login = "xpath://input[@placeholder='Password']"
 
 btn_login = "xpath://button[normalize-space()='Login']"
 
@@ -35,6 +35,9 @@ btn_search = "xpath://button[normalize-space()='Search']"
 btn_alert_delete = "xpath://button[normalize-space()='Yes, Delete']"
 btn_alert_cancel = "xpath://button[normalize-space()='No, Cancel']"
 
+
+element_footer = "xpath://div[@class='oxd-layout-footer']//p[2]"
+element_footer_link = "xpath://a[normalize-space()='OrangeHRM, Inc']"
 
 
 
