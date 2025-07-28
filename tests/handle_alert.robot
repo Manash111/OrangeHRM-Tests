@@ -5,7 +5,7 @@ Suite Setup     Open Browser To Login Page
 Suite Teardown      Close All Browsers
 
 *** Variables ***
-${employee_name}        Thomas Benny
+${employee_name}        Peter Anderson
 
 *** Test Cases ***
 
