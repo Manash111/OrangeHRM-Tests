@@ -18,3 +18,13 @@ report.html
 
 # Ignore sample_test.robot anywhere in the project
 **/sample_test.robot
+
+Test Senarios
+
+utilities
+
+**/variables.py
+**/webTables_Keywords.robot
+**/Webtables_userManagement_test.robot
+
+ScreenshotDefaultROBOT
