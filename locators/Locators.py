@@ -15,3 +15,9 @@ input_username_forgotPassword = input_username_login
 
 btn_reset = "xpath://button[normalize-space()='Reset Password']"
 forgotPasswordMessage = "Reset Password link sent successfully"
+
+
+#### Dashboard Details
+
+DASHBOARD_HEADER = "xpath://h6[normalize-space()='Dashboard']"
+dashboard_WIDGET = "xpath://div[@class = 'oxd-sheet oxd-sheet--rounded oxd-sheet--white orangehrm-dashboard-widget']"
