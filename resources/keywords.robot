@@ -5,7 +5,7 @@ Variables       ../locators/Locators.py
 
 *** Variables ***
 ${url}      https://opensource-demo.orangehrmlive.com
-${browser}      Chrome
+${browser}      headlesschrome
 
 *** Keywords ***
 
