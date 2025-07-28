@@ -92,3 +92,5 @@ XSS Multiple Input
     Page Should Not Contain    ${xss_payload}     # Script should NOT render
     Page Should Contain    Invalid credentials
 
+
+
