@@ -6,7 +6,7 @@ Suite Teardown    Close All Browsers
 
 *** Test Cases ***
 Invalid Login Test
-    EnterDetails    admin    Admin123
+    EnterDetails    admine    Admine123
     SubmitLogin
     Wait Until Page Contains    Invalid credentials
     Capture Page Screenshot
